@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    int num1, num2;
+    char operator;
+    int result;
+
+    printf("請輸入第一個數字：");
+    scanf("%d", &num1);
+
+    printf("請輸入運算符號（+、-、*、/）：");
+    scanf(" %c", &operator);
+
+    printf("請輸入第二個數字：");
+    scanf("%d", &num2);
+
+    if (operator == '+') {
+        result = num1 + num2;
+    } else if (operator == '-') {
+        result = num1 - num2;
+    } else if (operator == '*') {
+        result = num1 * num2;
+    } else if (operator == '/') {
+        if (num2 != 0) {
+            result = num1 / num2;
+        } else {
+            printf("除數不能為零！\n");
+            return 0;
+        }
+    } else {
+        printf("無效的運算符號！\n");
+        return 0;
+    }
+
+    printf("結果：%d\n", result);
+
+    return 0;
+}
